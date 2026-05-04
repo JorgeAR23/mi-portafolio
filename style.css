@@ -1,0 +1,206 @@
+/* Variables de Color Modernas */
+:root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --accent: #3b82f6; /* Azul eléctrico profesional */
+    --gray: #f4f4f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Navegación */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 10%;
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+
+/* Si usas una imagen (ajusta el tamaño aquí) */
+.nav-logo-img {
+    height: 50px; /* Controla qué tan alto se ve el logo en la barra */
+    width: auto;
+    display: block;
+}
+
+/* Efecto hover suave para el logo */
+.logo:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+nav ul { display: flex; list-style: none; gap: 2rem; align-items: center; }
+nav a { text-decoration: none; color: var(--text); font-weight: 500; transition: 0.3s; }
+nav a:hover { color: var(--accent); }
+
+.btn-contact {
+    background: var(--text);
+    color: white !important;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 10%;
+}
+
+.blob {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: var(--accent);
+    filter: blur(80px);
+    opacity: 0.2; /* Muy importante que sea bajo para no distraer */
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.blob-1 { top: -100px; right: -100px; }
+.blob-2 { bottom: -100px; left: -100px; background: #8b5cf6; /* Otro color para variar */ }
+
+.hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 1.5rem; }
+.highlight { color: var(--accent); }
+.hero p { font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto 2rem; }
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Espacio entre los logos */
+}
+
+.social-links a {
+    font-size: 2.5rem; /* Tamaño del icono */
+    color: var(--text);
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.social-links a:hover {
+    transform: translateY(-5px); /* Se eleva un poco */
+}
+
+/* Colores originales de marca al pasar el mouse (opcional) */
+.fa-github:hover {
+    color: #333; 
+}
+
+.fa-linkedin:hover {
+    color: #0077b5;
+}
+
+/* Grid de Proyectos */
+#proyectos, #habilidades, #contacto {
+    scroll-margin-top: 40px;
+}
+
+.projects { padding: 5rem 10%; background: var(--gray); }
+.projects h2 { margin-bottom: 3rem; text-align: center; font-size: 2.5rem; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.card:hover { transform: translateY(-10px); }
+/* Contenedor para que la imagen no se salga de las esquinas redondeadas */
+.card-img-container {
+    width: 100%;
+    height: 200px; /* Altura fija para que todas las tarjetas midan lo mismo */
+    overflow: hidden;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto hace que la imagen llene el espacio sin deformarse */
+    transition: transform 0.5s ease;
+}
+
+/* Efecto de zoom suave cuando pasas el mouse por la tarjeta */
+.card:hover .project-img {
+    transform: scale(1.1);
+}
+.card-info { padding: 1.5rem; }
+.tech { margin: 1rem 0; display: flex; gap: 10px; }
+.tech span {
+    font-size: 0.8rem;
+    background: var(--gray);
+    padding: 4px 10px;
+    border-radius: 5px;
+}
+
+.view-link { color: var(--accent); font-weight: bold; text-decoration: none; }
+
+/* Habilidades */
+.skills { padding: 5rem 10%; text-align: center; }
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.skills-container span {
+    padding: 1rem 2rem;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+/* Contacto y Footer */
+.contact { padding: 5rem 10%; text-align: center; background: var(--text); color: white; }
+.btn-main {
+    display: inline-block;
+    margin-top: 2rem;
+    background: var(--accent);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer { padding: 2rem; text-align: center; font-size: 0.9rem; color: #888; }
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    nav ul { display: none; }
+}
