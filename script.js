@@ -25,3 +25,26 @@ toggleBtn.addEventListener('click', () => {
         moonIcon.style.display = 'inline-block';
     }
 });
+
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+
+mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    
+    // Cambia el icono de barras a una 'X' al abrir
+    const icon = mobileMenu.querySelector('i');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-times');
+});
+
+// Cerrar el menú automáticamente al hacer clic en un link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+
+        const icon = mobileMenu.querySelector('i');
+        icon.classList.remove('fa-times'); 
+        icon.classList.add('fa-bars');    
+    });
+});

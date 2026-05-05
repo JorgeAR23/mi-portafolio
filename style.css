@@ -30,6 +30,23 @@ body.dark-mode {
     transform: scale(1.2) rotate(15deg);
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none; /* Escondido por defecto en escritorio */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text);
+    cursor: pointer;
+    order: 1;
+}
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -99,6 +116,9 @@ body.dark-mode .btn-contact:hover {
     justify-content: center;
     text-align: center;
     padding: 0 10%;
+    position: relative;
+    overflow: hidden; /* Esto asegura que los blobs no "empujen" la pantalla hacia los lados */
+    width: 100%;
 }
 
 .blob {
@@ -241,7 +261,32 @@ body.dark-mode .card {
 footer { padding: 2rem; text-align: center; font-size: 0.9rem; color: #888; }
 
 /* Responsivo */
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    nav ul { display: none; }
+@media (max-width: 700px) {
+    
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg);
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
 }
