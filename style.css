@@ -1,9 +1,33 @@
-/* Variables de Color Modernas */
+/* Colores por defecto (Claro) */
 :root {
     --bg: #ffffff;
     --text: #1a1a1a;
-    --accent: #3b82f6; /* Azul eléctrico profesional */
+    --accent: #3b82f6;
     --gray: #f4f4f5;
+    --card-bg: #ffffff;
+}
+
+/* Colores para el Modo Oscuro */
+body.dark-mode {
+    --bg: #0f172a;      
+    --text: #f8fafc;   
+    --gray: #1e293b;   
+    --card-bg: #1e293b;
+}
+
+/* Estilo del Botón en lugar del logo */
+#dark-mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2.2rem;
+    color: var(--accent);
+    transition: transform 0.3s ease;
+    padding: 5px;
+}
+
+#dark-mode-toggle:hover {
+    transform: scale(1.2) rotate(15deg);
 }
 
 * {
@@ -14,12 +38,16 @@
     scroll-behavior: smooth;
 }
 
-
-
 body {
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode nav {
+    background: rgba(15, 23, 42, 0.8);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 /* Navegación */
@@ -30,23 +58,10 @@ nav {
     padding: 2rem 10%;
     position: sticky;
     top: 0;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(var(--bg-rgb, 255, 255, 255), 0.8); 
     backdrop-filter: blur(10px);
     z-index: 100;
-}
-
-
-/* Si usas una imagen (ajusta el tamaño aquí) */
-.nav-logo-img {
-    height: 50px; /* Controla qué tan alto se ve el logo en la barra */
-    width: auto;
-    display: block;
-}
-
-/* Efecto hover suave para el logo */
-.logo:hover {
-    opacity: 0.8;
-    transition: 0.3s;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 nav ul { display: flex; list-style: none; gap: 2rem; align-items: center; }
@@ -54,10 +69,26 @@ nav a { text-decoration: none; color: var(--text); font-weight: 500; transition:
 nav a:hover { color: var(--accent); }
 
 .btn-contact {
-    background: var(--text);
-    color: white !important;
+    background-color: #1a1a1a;
+    color: #ffffff !important;   
     padding: 0.6rem 1.2rem;
     border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: #333333; 
+}
+
+body.dark-mode .btn-contact {
+    background-color: var(--text);
+    color: var(--bg) !important;  
+}
+
+body.dark-mode .btn-contact:hover {
+    opacity: 0.9; 
 }
 
 /* Hero Section */
@@ -76,13 +107,13 @@ nav a:hover { color: var(--accent); }
     height: 400px;
     background: var(--accent);
     filter: blur(80px);
-    opacity: 0.2; /* Muy importante que sea bajo para no distraer */
+    opacity: 0.3; 
     z-index: -1;
     border-radius: 50%;
 }
 
 .blob-1 { top: -100px; right: -100px; }
-.blob-2 { bottom: -100px; left: -100px; background: #8b5cf6; /* Otro color para variar */ }
+.blob-2 { bottom: -100px; left: -100px; background: #8b5cf6; }
 
 .hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 1.5rem; }
 .highlight { color: var(--accent); }
@@ -101,12 +132,10 @@ nav a:hover { color: var(--accent); }
     transition: all 0.3s ease;
 }
 
-/* Efecto al pasar el mouse */
 .social-links a:hover {
-    transform: translateY(-5px); /* Se eleva un poco */
+    transform: translateY(-5px);
 }
 
-/* Colores originales de marca al pasar el mouse (opcional) */
 .fa-github:hover {
     color: #333; 
 }
@@ -130,11 +159,17 @@ nav a:hover { color: var(--accent); }
 }
 
 .card {
-    background: white;
     border-radius: 15px;
+    background: var(--card-bg);
+    color: var(--text);
+    background: var(--card-bg); 
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     transition: 0.3s;
+}
+
+body.dark-mode .card {
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .card:hover { transform: translateY(-10px); }
@@ -152,12 +187,13 @@ nav a:hover { color: var(--accent); }
     transition: transform 0.5s ease;
 }
 
-/* Efecto de zoom suave cuando pasas el mouse por la tarjeta */
 .card:hover .project-img {
     transform: scale(1.1);
 }
 .card-info { padding: 1.5rem; }
+
 .tech { margin: 1rem 0; display: flex; gap: 10px; }
+
 .tech span {
     font-size: 0.8rem;
     background: var(--gray);
@@ -185,7 +221,12 @@ nav a:hover { color: var(--accent); }
 }
 
 /* Contacto y Footer */
-.contact { padding: 5rem 10%; text-align: center; background: var(--text); color: white; }
+.contact { 
+    padding: 5rem 10%; 
+    text-align: center; 
+    background: var(--gray);    
+    color: var(--text); }
+
 .btn-main {
     display: inline-block;
     margin-top: 2rem;

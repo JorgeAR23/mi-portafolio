@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jorge Aparicio Rodriguez | Portafolio Profesional</title>
+    <title>Jorge Aparicio | Portafolio Profesional</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Iconos -->
@@ -13,7 +13,12 @@
 
     <!-- Navegación -->
     <nav>
-        <div class="logo"><img src="img/google-developers.svg" alt="Logo" class="nav-logo-img"></div>
+        <div class="logo">
+            <button id="dark-mode-toggle" aria-label="Cambiar modo de color">
+            <i class="fa-solid fa-moon" id="moon-icon"></i>
+            <i class="fa-solid fa-sun" id="sun-icon" style="display: none;"></i>
+            </button>
+        </div>
         <ul>
             <li><a href="#proyectos">Proyectos</a></li>
             <li><a href="#habilidades">Habilidades</a></li>
@@ -27,7 +32,7 @@
         <div class="blob blob-2"></div>
         <div class="hero-content">
             <h1>Hola, soy <span class="highlight">Jorge</span></h1>
-            <p>Desarrollador Web enfocado en crear experiencias digitales de alto impacto y código limpio.</p>
+            <p>Desarrollador enfocado en crear experiencias digitales de alto impacto y código limpio.</p>
             <div class="social-links">
                 <a href="https://github.com/JorgeAR23" target="_blank" title="Visita mi GitHub">
                 <i class="fa-brands fa-github"></i>
@@ -55,21 +60,25 @@
                         <span>Android</span>
                         <span>Java</span>
                         <span>XML</span>
+                        <span>Git</span>
                     </div>
                     <a href="https://github.com/JorgeAR23/Mixtico" class="view-link">Ver Proyecto <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
             <!-- Proyecto 2 -->
             <div class="card">
-                <div class="card-img" style="background: #e0e0e0;"></div>
+                <div class="card-img-container">
+                     <img src="img/portada-nutribot.png" alt="Captura de pantalla de Mi Proyecto" class="project-img">
+                </div>
                 <div class="card-info">
-                    <h3>Gestor de Tareas</h3>
-                    <p>Aplicación de productividad con persistencia de datos en tiempo real.</p>
+                    <h3>NutriBot</h3>
+                    <p>Desarrollador enfocado en construir herramientas digitales que resuelven problemas del mundo real.</p>
                     <div class="tech">
-                        <span>JavaScript</span>
-                        <span>Firebase</span>
+                        <span>Python</span>
+                        <span>Streamlit</span>
+                        <span>Git</span>
                     </div>
-                    <a href="#" class="view-link">Ver Proyecto <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://nutri-bot-ia.streamlit.app/" class="view-link">Ver Proyecto <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
         </div>
@@ -96,8 +105,8 @@
     </section>
 
     <footer>
-        <p>© 2026 - Diseñado por Jorge Aparicio Rodriguez</p>
+        <p>© 2026 - Diseñado por Jorge Aparicio</p>
     </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
