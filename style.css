@@ -15,7 +15,6 @@ body.dark-mode {
     --card-bg: #1e293b;
 }
 
-/* Estilo del Botón en lugar del logo */
 #dark-mode-toggle {
     background: none;
     border: none;
@@ -117,7 +116,7 @@ body.dark-mode .btn-contact:hover {
     text-align: center;
     padding: 0 10%;
     position: relative;
-    overflow: hidden; /* Esto asegura que los blobs no "empujen" la pantalla hacia los lados */
+    overflow: hidden; 
     width: 100%;
 }
 
@@ -147,7 +146,7 @@ body.dark-mode .btn-contact:hover {
 }
 
 .social-links a {
-    font-size: 2.5rem; /* Tamaño del icono */
+    font-size: 2.5rem; 
     color: var(--text);
     transition: all 0.3s ease;
 }
