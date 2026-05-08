@@ -220,7 +220,12 @@ body.dark-mode .card {
     border-radius: 5px;
 }
 
-.view-link { color: var(--accent); font-weight: bold; text-decoration: none; }
+.view-link { 
+    color: var(--accent); 
+    font-weight: bold; 
+    text-decoration: none;
+    padding-right: 40px;
+}
 
 /* Habilidades */
 .skills { padding: 5rem 10%; text-align: center; }
